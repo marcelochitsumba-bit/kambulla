@@ -12,6 +12,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            scroll-behavior: smooth;
         }
 
         body {
@@ -20,14 +21,63 @@
             font-family: Arial, Helvetica, sans-serif;
         }
 
+        /* NAVEGAÇÃO */
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 70px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 7%;
+            background: rgba(5, 5, 5, 0.92);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #151515;
+            z-index: 1000;
+        }
+
+        .nav-logo {
+            color: #00eaff;
+            font-size: 22px;
+            font-weight: 900;
+            letter-spacing: 3px;
+            text-decoration: none;
+            text-shadow: 0 0 10px #00eaff;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #ccc;
+            text-decoration: none;
+            font-size: 14px;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #00eaff;
+            text-shadow: 0 0 10px #00eaff;
+        }
+
+        /* CAPA */
+
         header {
-            min-height: 90vh;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 30px;
+            padding: 100px 30px 30px;
+
             background:
                 radial-gradient(circle at center, #063b45 0%, #050505 55%);
         }
@@ -37,6 +87,7 @@
             font-weight: 900;
             letter-spacing: 8px;
             color: #00eaff;
+
             text-shadow:
                 0 0 10px #00eaff,
                 0 0 25px #00eaff,
@@ -67,10 +118,13 @@
             box-shadow: 0 0 25px #00eaff;
         }
 
+        /* SECÇÕES */
+
         section {
-            padding: 70px 25px;
+            padding: 90px 25px;
             max-width: 1000px;
             margin: auto;
+            scroll-margin-top: 70px;
         }
 
         h2 {
@@ -86,6 +140,25 @@
             font-size: 17px;
         }
 
+        /* ÁLBUM */
+
+        .coming {
+            text-align: center;
+            padding: 50px 30px;
+        }
+
+        .coming h3 {
+            font-size: 30px;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+        }
+
+        .coming span {
+            color: #00eaff;
+        }
+
+        /* SOBRE */
+
         .card {
             margin-top: 30px;
             padding: 35px;
@@ -94,11 +167,7 @@
             border-radius: 15px;
         }
 
-        .card h3 {
-            color: white;
-            font-size: 28px;
-            margin-bottom: 12px;
-        }
+        /* REDES SOCIAIS */
 
         .socials {
             display: flex;
@@ -125,20 +194,7 @@
             transform: translateY(-2px);
         }
 
-        .coming {
-            text-align: center;
-            padding: 50px 30px;
-        }
-
-        .coming h3 {
-            font-size: 30px;
-            letter-spacing: 3px;
-            margin-bottom: 15px;
-        }
-
-        .coming span {
-            color: #00eaff;
-        }
+        /* RODAPÉ */
 
         footer {
             text-align: center;
@@ -146,25 +202,105 @@
             border-top: 1px solid #222;
             color: #666;
         }
+
+        /* CELULAR */
+
+        @media (max-width: 700px) {
+
+            nav {
+                padding: 0 20px;
+            }
+
+            .nav-logo {
+                font-size: 18px;
+            }
+
+            .nav-links {
+                gap: 14px;
+            }
+
+            .nav-links a {
+                font-size: 11px;
+            }
+
+            .logo {
+                font-size: 43px;
+                letter-spacing: 5px;
+            }
+
+            .subtitle {
+                font-size: 13px;
+                letter-spacing: 2px;
+            }
+
+            h2 {
+                font-size: 27px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+        }
     </style>
 </head>
 
+
 <body>
 
-<header>
-    <div class="logo">KAMBULLA</div>
+
+<!-- NAVEGAÇÃO -->
+
+<nav>
+
+    <a href="#inicio" class="nav-logo">
+        KAMBULLA
+    </a>
+
+    <ul class="nav-links">
+
+        <li>
+            <a href="#inicio">INÍCIO</a>
+        </li>
+
+        <li>
+            <a href="#sobre">SOBRE</a>
+        </li>
+
+        <li>
+            <a href="#musica">MÚSICA</a>
+        </li>
+
+        <li>
+            <a href="#redes">REDES</a>
+        </li>
+
+    </ul>
+
+</nav>
+
+
+<!-- INÍCIO -->
+
+<header id="inicio">
+
+    <div class="logo">
+        KAMBULLA
+    </div>
 
     <div class="subtitle">
         MÚSICA • ARTE
     </div>
 
-    <a href="#album" class="button">
+    <a href="#musica" class="button">
         EXPLORAR
     </a>
+
 </header>
 
 
-<section id="album">
+<!-- MÚSICA -->
+
+<section id="musica">
 
     <div class="coming">
 
@@ -185,20 +321,34 @@
 </section>
 
 
-<section>
+<!-- SOBRE -->
 
-    <h2>SOBRE</h2>
+<section id="sobre">
+
+    <h2>SOBRE KAMBULLA</h2>
 
     <div class="card">
 
         <p>
+            Kambulla é um artista da cidade da Beira, Moçambique,
+            que encontra na música uma forma de expressar experiências,
+            pensamentos e diferentes perspectivas sobre a vida.
+        </p>
 
-Kambulla é um artista da cidade da Beira, Moçambique, que encontra na música uma forma de expressar experiências, pensamentos e diferentes perspectivas sobre a vida.
+        <br>
 
-Movido pela criatividade e pela vontade de construir uma identidade própria, Kambulla explora diferentes sonoridades e transforma as suas vivências em música.
+        <p>
+            Movido pela criatividade e pela vontade de construir uma
+            identidade própria, Kambulla explora diferentes sonoridades
+            e transforma as suas vivências em música.
+        </p>
 
-Este é o seu espaço oficial, onde podes acompanhar a sua evolução, conhecer os seus projectos e ficar por dentro dos próximos lançamentos.
+        <br>
 
+        <p>
+            Este é o seu espaço oficial, onde podes acompanhar a sua
+            evolução, conhecer os seus projectos e ficar por dentro
+            dos próximos lançamentos.
         </p>
 
     </div>
@@ -206,7 +356,9 @@ Este é o seu espaço oficial, onde podes acompanhar a sua evolução, conhecer 
 </section>
 
 
-<section>
+<!-- REDES -->
+
+<section id="redes">
 
     <h2>ACOMPANHA KAMBULLA</h2>
 
@@ -237,11 +389,17 @@ Este é o seu espaço oficial, onde podes acompanhar a sua evolução, conhecer 
 </section>
 
 
+<!-- RODAPÉ -->
+
 <footer>
+
     © 2026 KAMBULLA — Todos os direitos reservados.
+
 </footer>
+
 
 </body>
 </html>
 ```
+
 
